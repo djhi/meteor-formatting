@@ -1,0 +1,15 @@
+{
+  "name": "meteor-formatting",
+  "description": "Provides helpers for quick formatting of dates and numbers. Integration of moment (with languages) and numeral (with languages too).",
+  "homepage": "",
+  "author": "Gildas Garcia <gildas.garcia@gmail.com>",
+  "version": "0.0.1",
+  "git": "https://github.com/djhi/meteor-formatting.git",
+  "packages": {
+    "moment-with-langs": {},
+	"numeral": {
+      "git": "https://github.com/djhi/meteor-numeral.git",
+      "branch": "master"
+    }
+  }
+}
