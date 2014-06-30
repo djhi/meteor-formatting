@@ -1,14 +1,14 @@
 _.extend(MeteorFormatting, {
-  duration: function(hours, units) {
-    if (typeof hours === 'undefined' || hours === null) {
-      hours = 0;
+  duration: function(duration, units) {
+    if (typeof duration === 'undefined' || duration === null) {
+      duration = 0;
     }
 
-    if (typeof hours === 'number') {
-      return moment.duration(hours, units || 'hours').humanize();
+    if (typeof duration === 'number') {
+      return moment.duration(duration, units || 'hours').humanize();
     }
 
-    return 'Durée invalide'
+    return '[Invalid Date]'
   },
   fromNow: function(date) {
     var momentDate = moment(date);
@@ -17,7 +17,7 @@ _.extend(MeteorFormatting, {
       return momentDate.fromNow();
     }
 
-    return 'Date invalide'
+    return '[Invalid Date]'
   },
   formatDate: function(date, format) {
     var momentDate = moment(date);
@@ -26,7 +26,7 @@ _.extend(MeteorFormatting, {
       return momentDate.format(format || 'DD/MM/YYYY');
     }
 
-    return 'Date invalide'
+    return '[Invalid Date]'
   },
   mediumDate: function(date) {
     var momentDate = moment(date);
@@ -35,7 +35,7 @@ _.extend(MeteorFormatting, {
       return momentDate.format('LL');
     }
 
-    return 'Date invalide'
+    return '[Invalid Date]'
   },
   month: function(date) {
     var momentDate = moment(date);
@@ -44,7 +44,7 @@ _.extend(MeteorFormatting, {
       return momentDate.format('MMMM');
     }
 
-    return 'Date invalide'
+    return '[Invalid Date]'
   },
   shortMonthAndYear: function(date) {
     var momentDate = moment(date);
@@ -53,6 +53,6 @@ _.extend(MeteorFormatting, {
       return momentDate.format('MMM YYYY');
     }
 
-    return 'Date invalide'
+    return '[Invalid Date]'
   }
 });
