@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api, where) {
-  api.use(['moment-with-langs', 'numeral']);
+  api.use(['moment-with-langs', 'numeral', 'ui']);
   api.imply(['moment-with-langs', 'numeral'], ['client', 'server']);
   
   api.add_files(['base.js', 'dates.js', 'numbers.js'], ['client', 'server']);
