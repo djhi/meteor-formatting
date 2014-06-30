@@ -1,15 +1,15 @@
-UI.registerHelper('duration', Formats.duration);
+UI.registerHelper('duration', MeteorFormatting.duration);
 
-UI.registerHelper('fromNow', Formats.fromNow);
+UI.registerHelper('fromNow', MeteorFormatting.fromNow);
 
-UI.registerHelper('formatDate', Formats.formatDate);
+UI.registerHelper('formatDate', MeteorFormatting.formatDate);
 
-UI.registerHelper('mediumDate', Formats.mediumDate);
+UI.registerHelper('mediumDate', MeteorFormatting.mediumDate);
 
-UI.registerHelper('month', Formats.month);
+UI.registerHelper('month', MeteorFormatting.month);
 
-UI.registerHelper('shortMonthAndYear', Formats.shortMonthAndYear);
+UI.registerHelper('shortMonthAndYear', MeteorFormatting.shortMonthAndYear);
 
-UI.registerHelper('currency', Formats.currency);
+UI.registerHelper('currency', MeteorFormatting.currency);
 
-UI.registerHelper('percentage', Formats.percentage);
+UI.registerHelper('percentage', MeteorFormatting.percentage);
