@@ -1,5 +1,5 @@
 _.extend(MeteorFormatting, {
-  duration: function(duration, units) {
+  timeSpent: function(duration, units) {
     if (typeof duration === 'undefined' || duration === null) {
       duration = 0;
     }

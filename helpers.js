@@ -1,4 +1,4 @@
-UI.registerHelper('duration', MeteorFormatting.duration);
+UI.registerHelper('timeSpent', MeteorFormatting.timeSpent);
 
 UI.registerHelper('fromNow', MeteorFormatting.fromNow);
 
