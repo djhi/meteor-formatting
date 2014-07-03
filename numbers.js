@@ -1,4 +1,24 @@
 _.extend(MeteorFormatting, {
+  number: function(number, format) {
+
+    var numberForFormatting = number;
+
+    if (typeof number === 'string') {
+      numberForFormatting = numeral().unformat(number);
+    }
+
+    return numeral(numberForFormatting).format(this.format || '0.00');
+  },
+  currencyNoSymbol: function(number) {
+
+    var numberForFormatting = number;
+
+    if (typeof number === 'string') {
+      numberForFormatting = numeral().unformat(number);
+    }
+
+    return numeral(numberForFormatting).format('0.00');
+  },
   currency: function(number, symbolAtEnd) {
 
     var numberForFormatting = number;
@@ -7,7 +27,7 @@ _.extend(MeteorFormatting, {
       numberForFormatting = numeral().unformat(number);
     }
 
-    return numeral(number).format((!symbolAtEnd ? '$' : '') + '0.00' + (symbolAtEnd ? '$' : ''));
+    return numeral(numberForFormatting).format((!this.symbolAtEnd ? '$' : '') + '0.00' + (this.symbolAtEnd ? '$' : ''));
   },
   percentage: function(number) {
     var numberForFormatting = number;
