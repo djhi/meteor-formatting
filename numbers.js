@@ -1,39 +1,56 @@
 _.extend(MeteorFormatting, {
-  number: function(number, format) {
+  number: function(value, keywords) {
 
-    var numberForFormatting = number;
+    var numberForFormatting = value;
 
-    if (typeof number === 'string') {
-      numberForFormatting = numeral().unformat(number);
+    if (typeof value === 'string') {
+      if (keywords.hash.isNumber) {
+        numberForFormatting = parseFloat(value);
+      } else {
+        numberForFormatting = numeral().unformat(value);
+      }
     }
 
-    return numeral(numberForFormatting).format(this.format || '0.00');
+    return numeral(numberForFormatting).format(keywords.hash.format || '0.00');
   },
-  currencyNoSymbol: function(number) {
+  currencyNoSymbol: function(value, keywords) {
 
-    var numberForFormatting = number;
+    var numberForFormatting = value;
 
-    if (typeof number === 'string') {
-      numberForFormatting = numeral().unformat(number);
+    if (typeof value === 'string') {
+      if (keywords.hash.isNumber) {
+        numberForFormatting = parseFloat(value);
+      } else {
+        numberForFormatting = numeral().unformat(value);
+      }
     }
 
     return numeral(numberForFormatting).format('0.00');
   },
-  currency: function(number, symbolAtEnd) {
+  currency: function(value, keywords) {
 
-    var numberForFormatting = number;
+    var numberForFormatting = value;
 
-    if (typeof number === 'string') {
-      numberForFormatting = numeral().unformat(number);
+    if (typeof value === 'string') {
+      if (keywords.hash.isNumber) {
+        numberForFormatting = parseFloat(value);
+      } else {
+        numberForFormatting = numeral().unformat(value);
+      }
     }
 
-    return numeral(numberForFormatting).format((!this.symbolAtEnd ? '$' : '') + '0.00' + (this.symbolAtEnd ? '$' : ''));
+    return numeral(numberForFormatting).format((!keywords.hash.symbolAtEnd ? '$' : '') + '0.00' + (keywords.hash.symbolAtEnd ? '$' : ''));
   },
-  percentage: function(number) {
-    var numberForFormatting = number;
 
-    if (typeof number === 'string') {
-      numberForFormatting = numeral().unformat(number);
+  percentage: function(value, keywords) {
+    var numberForFormatting = value;
+
+    if (typeof value === 'string') {
+      if (keywords.hash.isNumber) {
+        numberForFormatting = parseFloat(value);
+      } else {
+        numberForFormatting = numeral().unformat(value);
+      }
     }
 
     // Numeral expect a number lesser than 1 (0.5 for 50%). 
