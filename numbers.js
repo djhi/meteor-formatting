@@ -2,7 +2,7 @@ _.extend(MeteorFormatting, {
   number: function(value, keywords) {
     var numberForFormatting = 0;
 
-    if (typeof value !== undefined) {
+    if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       numberForFormatting = value;
 
       if (typeof value === 'string') {
@@ -19,7 +19,7 @@ _.extend(MeteorFormatting, {
   currencyNoSymbol: function(value, keywords) {
     var numberForFormatting = 0;
 
-    if (typeof value !== undefined) {
+    if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       var numberForFormatting = value;
 
       if (typeof value === 'string') {
@@ -36,7 +36,7 @@ _.extend(MeteorFormatting, {
   currency: function(value, keywords) {
     var numberForFormatting = 0;
 
-    if (typeof value !== undefined) {
+    if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       var numberForFormatting = value;
 
       if (typeof value === 'string') {
@@ -54,7 +54,7 @@ _.extend(MeteorFormatting, {
   percentage: function(value, keywords) {
     var numberForFormatting = 0;
 
-    if (typeof value !== undefined) {
+    if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       var numberForFormatting = value;
 
       if (typeof value === 'string') {
