@@ -1,41 +1,50 @@
 _.extend(MeteorFormatting, {
   number: function(value, keywords) {
+    var numberForFormatting = 0;
 
-    var numberForFormatting = value;
+    if (typeof value !== undefined) {
+      numberForFormatting = value;
 
-    if (typeof value === 'string') {
-      if (keywords.hash.isNumber) {
-        numberForFormatting = parseFloat(value);
-      } else {
-        numberForFormatting = numeral().unformat(value);
+      if (typeof value === 'string') {
+        if (keywords.hash.isNumber) {
+          numberForFormatting = parseFloat(value);
+        } else {
+          numberForFormatting = numeral().unformat(value);
+        }
       }
     }
 
     return numeral(numberForFormatting).format(keywords.hash.format || '0.00');
   },
   currencyNoSymbol: function(value, keywords) {
+    var numberForFormatting = 0;
 
-    var numberForFormatting = value;
+    if (typeof value !== undefined) {
+      var numberForFormatting = value;
 
-    if (typeof value === 'string') {
-      if (keywords.hash.isNumber) {
-        numberForFormatting = parseFloat(value);
-      } else {
-        numberForFormatting = numeral().unformat(value);
+      if (typeof value === 'string') {
+        if (keywords.hash.isNumber) {
+          numberForFormatting = parseFloat(value);
+        } else {
+          numberForFormatting = numeral().unformat(value);
+        }
       }
     }
 
     return numeral(numberForFormatting).format('0.00');
   },
   currency: function(value, keywords) {
+    var numberForFormatting = 0;
 
-    var numberForFormatting = value;
+    if (typeof value !== undefined) {
+      var numberForFormatting = value;
 
-    if (typeof value === 'string') {
-      if (keywords.hash.isNumber) {
-        numberForFormatting = parseFloat(value);
-      } else {
-        numberForFormatting = numeral().unformat(value);
+      if (typeof value === 'string') {
+        if (keywords.hash.isNumber) {
+          numberForFormatting = parseFloat(value);
+        } else {
+          numberForFormatting = numeral().unformat(value);
+        }
       }
     }
 
@@ -43,13 +52,17 @@ _.extend(MeteorFormatting, {
   },
 
   percentage: function(value, keywords) {
-    var numberForFormatting = value;
+    var numberForFormatting = 0;
 
-    if (typeof value === 'string') {
-      if (keywords.hash.isNumber) {
-        numberForFormatting = parseFloat(value);
-      } else {
-        numberForFormatting = numeral().unformat(value);
+    if (typeof value !== undefined) {
+      var numberForFormatting = value;
+
+      if (typeof value === 'string') {
+        if (keywords.hash.isNumber) {
+          numberForFormatting = parseFloat(value);
+        } else {
+          numberForFormatting = numeral().unformat(value);
+        }
       }
     }
 
