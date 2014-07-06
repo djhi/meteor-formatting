@@ -10,10 +10,28 @@ UI.registerHelper('month', MeteorFormatting.month);
 
 UI.registerHelper('shortMonthAndYear', MeteorFormatting.shortMonthAndYear);
 
-UI.registerHelper('number', MeteorFormatting.number);
+UI.registerHelper('number', function(value, keywords) {
+  var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber  : false;
+  var format = (keywords && keywords.hash) ? keywords.hash.format  : false;
 
-UI.registerHelper('currencyNoSymbol', MeteorFormatting.currencyNoSymbol);
+  return MeteorFormatting.number(value, isNumber, format);
+});
 
-UI.registerHelper('currency', MeteorFormatting.currency);
+UI.registerHelper('currencyNoSymbol', function(value, keywords) {
+  var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber  : false;
 
-UI.registerHelper('percentage', MeteorFormatting.percentage);
+  return MeteorFormatting.currencyNoSymbol(isNumber);
+});
+
+UI.registerHelper('currency', function(value, keywords) {
+  var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber  : false;
+  var symbolAtEnd = (keywords && keywords.hash) ? keywords.hash.symbolAtEnd : false;
+
+  return MeteorFormatting.currency(value, isNumber, symbolAtEnd)
+});
+
+UI.registerHelper('percentage', function(value, keywords) {
+  var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber  : false;
+
+  return MeteorFormatting.number(value, isNumber);
+});
