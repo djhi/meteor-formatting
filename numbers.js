@@ -1,8 +1,6 @@
 _.extend(MeteorFormatting, {
-  number: function(value, keywords) {
+  number: function(value, isNumber, format) {
     var numberForFormatting = 0;
-    var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber : false;
-    var format = (keywords && keywords.hash) ? keywords.hash.format : false;
 
     if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       numberForFormatting = value;
@@ -18,9 +16,8 @@ _.extend(MeteorFormatting, {
 
     return numeral(numberForFormatting).format(format || '0.00');
   },
-  currencyNoSymbol: function(value, keywords) {
+  currencyNoSymbol: function(value, isNumber) {
     var numberForFormatting = 0;
-    var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber : false;
 
     if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       var numberForFormatting = value;
@@ -36,10 +33,8 @@ _.extend(MeteorFormatting, {
 
     return numeral(numberForFormatting).format('0.00');
   },
-  currency: function(value, keywords) {
+  currency: function(value, isNumber, symbolAtEnd) {
     var numberForFormatting = 0;
-    var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber : false;
-    var symbolAtEnd = (keywords && keywords.hash) ? keywords.hash.symbolAtEnd : false;
 
     if (typeof value === 'number' || (typeof value === 'string' && value.length > 0)) {
       var numberForFormatting = value;
