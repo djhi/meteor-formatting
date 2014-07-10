@@ -20,7 +20,7 @@ UI.registerHelper('number', function(value, keywords) {
 UI.registerHelper('currencyNoSymbol', function(value, keywords) {
   var isNumber = (keywords && keywords.hash) ? keywords.hash.isNumber  : false;
 
-  return MeteorFormatting.currencyNoSymbol(isNumber);
+  return MeteorFormatting.currencyNoSymbol(value, isNumber);
 });
 
 UI.registerHelper('currency', function(value, keywords) {
